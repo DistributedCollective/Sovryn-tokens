@@ -20,7 +20,7 @@
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+const mnemonic = "4f9f67e4b21f66eada43531ce2855144451e03f0b74f17c382c67b08923a59c6";//fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -46,15 +46,15 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
     mainnet: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://public-node.rsk.co', 0, 1, true, "m/44'/137'/0'/0/"),
+      provider: () => new HDWalletProvider(mnemonic, 'https://mainnet.sovryn.app/rpc', 0, 1, true, "m/44'/137'/0'/0/"),
       network_id: 30,
-      gasPrice: 20000000000,
+      gasPrice: 60000100,
       networkCheckTimeout: 1e9
     },
     testnet: {
       provider: () => new HDWalletProvider(mnemonic, 'https://public-node.testnet.rsk.co', 0, 10, true, "m/44'/37310'/0'/0/"),
       network_id: 31,
-      gasPrice: 10000000000,
+      gasPrice: 60000100,
       networkCheckTimeout: 1e9
     }
   },
